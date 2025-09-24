@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json",
+  "hideSelection": false,
+  "formatter": {
+    "elmType": "div",
+    "customRowAction": {
+      "action": "none"
+    },
+    "style": {
+      "position": "flex",
+      "display": "flex",
+      "flex-direction": "column",
+      "justify-content": "center",
+      "align-items": "center",
+      "overflow": "auto",
+      "height": "275px",
+      "padding": "0px",
+      "margin": "25px",
+      "width": "250px",
+      "cursor": "pointer"
+    },
+    "children": [
+      {
+        "elmType": "img",
+        "style": {
+          "width": "100%",
+          "height": "250px",
+          "object-fit": "cover",
+          "border-radius": "32px"
+        },
+        "attributes": {
+          "src": "[$Image.serverRelativeUrl]",
+          "alt": "[$Image.altText]"
+        }
+      },
+      {
+        "elmType": "div",
+        "style": {
+          "font-size": "12px",
+          "font-weight": "600",
+          "text-align": "center",
+          "width": "100%",
+          "padding": "4px 0"
+        },
+        "attributes": {
+          "title": "[$Title]"
+        },
+        "txtContent": "[$Title]"
+      }
+    ]
+  }
+}
