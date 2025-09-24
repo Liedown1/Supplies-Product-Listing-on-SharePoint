@@ -1,0 +1,185 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "cursor": "pointer",
+    "padding": "4px"
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "txtContent": "[$Title]",
+      "style": {
+        "font-weight": "600",
+        "color": "black"
+      }
+    }
+  ],
+  "customCardProps": {
+    "formatter": {
+      "elmType": "div",
+      "style": {
+        "white-space": "pre-wrap",
+        "display": "flex",
+        "flex-direction": "column",
+        "background-color": "#f8f8ff",
+        "border": "2px solid #555555",
+        "border-radius": "6px",
+        "padding": "8px",
+        "max-width": "315px"
+      },
+      "children": [
+        {
+          "elmType": "a",
+          "attributes": {
+            "href": "=@currentWeb + '/Lists/Product Listings/DispForm.aspx?ID=' + [$ID]",
+            "target": "_blank",
+            "title": "Open item"
+          },
+          "style": {
+            "display": "block",
+            "width": "100%",
+            "text-decoration": "none",
+            "color": "inherit"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "style": {
+                "margin-bottom": "4px",
+                "line-height": "1.4",
+                "background-color": "#FCFCFC",
+                "border": "2px solid #555555",
+                "border-radius": "6px",
+                "padding-left": "4px"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "txtContent": "Name: ",
+                  "style": {
+                    "color": "black",
+                    "font-weight": "600"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "[$Title]", // Change to Column of choice
+                  "style": {
+                    "color": "#006161",
+                    "font-weight": "600"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "\nCategory: ",
+                  "style": {
+                    "color": "black",
+                    "font-weight": "600"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "[$Category]", // Change to Column of choice
+                  "style": {
+                    "color": "#006161",
+                    "font-weight": "600"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "\nAvailibility: ",
+                  "style": {
+                    "color": "black",
+                    "font-weight": "600"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "=join([$Availability], ', ')", // Change to Column of choice
+                  "style": {
+                    "color": "#006161",
+                    "font-weight": "600"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "\nProduct Code: ",
+                  "style": {
+                    "color": "black",
+                    "font-weight": "600"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "[$Sage_x0020_Code]", // Change to Column of choice
+                  "style": {
+                    "color": "#006161",
+                    "font-weight": "600"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "display": "flex",
+                "justify-content": "center",
+                "align-items": "center",
+                "margin-top": "8px"
+              },
+              "children": [
+                {
+                  "elmType": "img",
+                  "attributes": {
+                    "src": "=getThumbnailImage([$Product_x0020_image], 300, 300)"
+                  },
+                  "style": {
+                    "border": "2px solid #555555",
+                    "border-radius": "6px",
+                    "max-width": "100%",
+                    "object-fit": "contain"
+                  }
+                }
+              ]
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "margin-top": "8px",
+                "line-height": "1.4",
+                "background-color": "#FCFCFC",
+                "border": "2px solid #555555",
+                "border-radius": "6px",
+                "padding-left": "4px"
+              },
+              "children": [
+                {
+                  "elmType": "span",
+                  "txtContent": "Description: ", 
+                  "style": {
+                    "color": "black",
+                    "font-weight": "600"
+                  }
+                },
+                {
+                  "elmType": "span",
+                  "txtContent": "[$Product_x0020_Description]", // Change to Column of choice
+                  "style": {
+                    "color": "#006161",
+                    "font-weight": "600",
+                    "white-space": "normal",
+                    "word-break": "break-word"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "openOnEvent": "click",
+    "directionalHint": "left",
+    "isBeakVisible": true
+  }
+}
